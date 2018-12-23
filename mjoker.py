@@ -12,24 +12,23 @@ import time
 import datetime
 import requests
 import json
-import aiohttp
+import aiohttp		
 
 
-client = Bot(description="Here is some commands for you", command_prefix="mw!", pm_help = True) #add_your_bot_description_with_prefix_here
+Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
+client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
 client.remove_command('help')
 
 
-@client.event
-async def on_ready():
-	print('Logged in as '+client.user.name+'')
-	print('--------')
-	print('--------')
-	print('Started pubg') #add_your_bot_name_here
-	return await client.change_presence(game=discord.Game(name='Master play bots | 9679 users')) #add_your_bot_status_here
 
-
-
-
+async def status_task():
+    while True:
+        await client.change_presence(game=discord.Game(name='!!help'))
+        await asyncio.sleep(5)
+        await client.change_presence(game=discord.Game(name='with '+str(len(set(client.get_all_members())))+' users'))
+        await asyncio.sleep(5)
+        await client.change_presence(game=discord.Game(name='in '+str(len(client.servers))+' servers'))
+        await asyncio.sleep(5)
 
 
 
