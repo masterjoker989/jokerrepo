@@ -42,7 +42,6 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
 
 
 @client.command(pass_context=True, aliases=['server'])
-@commands.has_permissions(kick_members=True)
 async def membercount(ctx, *args):
     """
     Shows stats and information about current guild.
