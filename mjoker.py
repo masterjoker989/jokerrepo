@@ -24,7 +24,7 @@ async def on_ready():
 	print('--------')
 	print('--------')
 	print('Started pubg') #add_your_bot_name_here
-	return await client.change_presence(game=discord.Game(name='Fortnite')) #add_your_bot_status_here
+	return await client.change_presence(game=discord.Game(name='Master play bots | 9679 users')) #add_your_bot_status_here
 
 
 @client.command(pass_context=True, aliases=['server'])
