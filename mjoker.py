@@ -14,9 +14,10 @@ import requests
 import json
 import aiohttp
 
-Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
-client = commands.Bot(description="joker Official Bot", command_prefix=commands.when_mentioned_or("mw!"), pm_help = True)
+
+client = Bot(description="Here is some commands for you", command_prefix="mw!", pm_help = True) #add_your_bot_description_with_prefix_here
 client.remove_command('help')
+
 
 @client.event
 async def on_ready():
